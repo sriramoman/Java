@@ -1,0 +1,20 @@
+package bitmanip;
+
+public class Tutorial {
+	static int repeatedShiftRight(int data,int count,boolean logic){
+		//Shift data <count> times
+		for(int i=0;i<count;i++)
+			if(logic)
+				data>>>=1;
+			else
+				data>>=1;
+		return data;
+	}
+	public static void main(String[] args) {
+		System.out.println(repeatedShiftRight(-93242,40,false));
+		System.out.println(repeatedShiftRight(-93242,40,true));
+//		System.out.println(-93242/Math.pow(2, 40));
+		
+	}
+
+}
