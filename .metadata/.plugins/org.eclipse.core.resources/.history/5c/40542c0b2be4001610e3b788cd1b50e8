@@ -31,18 +31,18 @@ public class Tutorial {
 	}
 	static int clearBit(int data,int position,significance bit){
 		int mask=0;
-		if(bit==significance.lsb)	//clears <position> LSBs
+		if(bit==significance.lsb)
 			mask=~0<<position;
-		else	//retains <position> MSBs
+		else
 			mask=(1<<position)-1;
 		return data&mask;
 	}
 	public static void main(String[] args) {
-		System.out.println(repeatedShiftRight(-93242,40,shiftMode.logic));
-		System.out.println(repeatedShiftRight(-93242,40,shiftMode.arithmetic));
-		System.out.println(-93242/Math.pow(2, 40));
-		System.out.println(getBit(-21,1));
-		System.out.println(setBit(8,2));
+//		System.out.println(repeatedShiftRight(-93242,40,shiftMode.logic));
+//		System.out.println(repeatedShiftRight(-93242,40,shiftMode.arithmetic));
+//		System.out.println(-93242/Math.pow(2, 40));
+//		System.out.println(getBit(-21,1));
+//		System.out.println(setBit(8,2));
 		System.out.println(clearBit(15,2,significance.lsb));
 		System.out.println(clearBit(21,3,significance.msb));
 		

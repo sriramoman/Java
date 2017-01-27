@@ -5,11 +5,6 @@ enum shiftMode{
 	arithmetic
 }
 
-enum significance{
-	msb,
-	lsb
-}
-
 public class Tutorial {
 	static int repeatedShiftRight(int data,int count,shiftMode type){
 		//Shift data <count> times
@@ -25,27 +20,11 @@ public class Tutorial {
 		int mask=1<<(position-1);
 		return (data & mask)!=0;
 	}
-	static int setBit(int data,int position){
-		int mask=1<<(position-1);
-		return data|mask;
-	}
-	static int clearBit(int data,int position,significance bit){
-		int mask=0;
-		if(bit==significance.lsb)	//clears <position> LSBs
-			mask=~0<<position;
-		else	//retains <position> MSBs
-			mask=(1<<position)-1;
-		return data&mask;
-	}
 	public static void main(String[] args) {
 		System.out.println(repeatedShiftRight(-93242,40,shiftMode.logic));
 		System.out.println(repeatedShiftRight(-93242,40,shiftMode.arithmetic));
 		System.out.println(-93242/Math.pow(2, 40));
 		System.out.println(getBit(-21,1));
-		System.out.println(setBit(8,2));
-		System.out.println(clearBit(15,2,significance.lsb));
-		System.out.println(clearBit(21,3,significance.msb));
-		
 	}
 
 }
